@@ -32,4 +32,13 @@ public class Lesson03Quiz01RestController {
 		
 		return realEstateBO.getRealEstateListByRentPrice(rentPrice);
 	}
+	
+	// 요청 URL: http://localhost:8080/lesson03/quiz01/3?area=90&price=130000
+	@RequestMapping("/3")
+	public List<RealEstate> quiz01_3(
+			@RequestParam(value="area") int area,
+			@RequestParam("price") int price) {
+		
+		return realEstateBO.getRealEstateListByAreaPrice(area, price);   // response body => JSON
+	}
 }
