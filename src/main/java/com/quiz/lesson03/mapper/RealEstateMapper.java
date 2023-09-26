@@ -16,23 +16,26 @@ public interface RealEstateMapper {
 			@Param("rentPrice1") int rentPrice);
 	
 	public List<RealEstate> selectRealEstateListByAreaPrice(
-			@Param("area") int area,
-			@Param("price") int price);
+			// @Param 하나의 map이 된다.(파라미터가 2개 이상일 때)
+			@Param("area") int area1111111111111,
+			@Param("price") int price2222222222222);
 	
-	// myBatis가 성공된 행의 개수를 채워서 리턴해줌
+	// mybatis가 성공된 행의 개수를 채워서 리턴해줌
 	public int insertRealEstate(RealEstate realEstate);
 	
-	
-	//(realtorId, address, area, type, price,rentPrice);
-	
 	public int insertRealEstateAsField(
-			//파라미터 2개 이상이면 map으로 만든다(@Param)
-			
-			@Param("realtorId") int realtorId,
-			@Param("address") String address,
-			@Param("area") int area,
+			@Param("realtorId") int realtorId1111, 
+			@Param("address") String address2222, 
+			@Param("area") int area333, 
+			@Param("type") String type344, 
+			@Param("price") int price3434, 
+			@Param("rentPrice") Integer rentPrice);
+	
+	public int updateRealEstateById(
+			@Param("id") int id,
 			@Param("type") String type,
-			@Param("price") int price,
-			@Param("rentPrice") Integer rentPrice
+			@Param("price") int price
 			);
+	
+	
 }
